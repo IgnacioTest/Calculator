@@ -3,10 +3,12 @@ package com.example.calculator.service;
 import com.example.calculator.utils.Operator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
 
+@Service
 public class CalculatorServiceImpl implements  CalculatorService{
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CalculatorServiceImpl.class);
