@@ -1,17 +1,28 @@
 package com.example.calculator.service;
 
 import com.example.calculator.utils.Operator;
+import com.example.calculator.utils.operations.Addition;
+import com.example.calculator.utils.operations.Operation;
+import com.example.calculator.utils.operations.Subtract;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 
 
+/**
+ * The class CalculatorServiceImpl
+ */
 @Service
 public class CalculatorServiceImpl implements  CalculatorService{
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CalculatorServiceImpl.class);
+    @Autowired
+    Addition addition;
+    @Autowired
+    Subtract subtract;
 
     /**
      * Method to perform the operation
@@ -26,19 +37,19 @@ public class CalculatorServiceImpl implements  CalculatorService{
         if (LOGGER.isDebugEnabled()){
             LOGGER.debug("Calculating result for: ", num1, num2, operator);
         }
-        Operator operation = Operator.operatorValue(operator);
+        Operator opt = Operator.operatorValue(operator);
 
-        switch (operation){
-            case SUMA:
-                return num1.add(num2).doubleValue();
-            case RESTA:
-                return num1.subtract(num2).doubleValue();
 
-            default:
-                if(LOGGER.isErrorEnabled()){
-                    LOGGER.error("Operacion no soportada", operation);
-                }
-                throw new RuntimeException("Operacion no soportada" + operation);
+        if (opt.getSign().equals("+")){
+            return addition.apply(num1, num2);
         }
+        if (opt.getSign().equals("-")){
+            return subtract.apply(num1, num2);
+        }
+        if(LOGGER.isErrorEnabled()){
+            LOGGER.error("Operacion no soportada", opt);
+        }
+        throw new RuntimeException("Operacion no soportada" + opt);
+
     }
 }

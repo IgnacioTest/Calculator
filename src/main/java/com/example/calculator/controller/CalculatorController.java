@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
 
+/**
+ * The class CalculatorController
+ */
 @RestController
 @RequestMapping("/calculator")
 public class CalculatorController {
