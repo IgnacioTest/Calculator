@@ -15,15 +15,10 @@ Comunicación a través de una API REST (p.e. GET /calculator/calculate?num1=4&n
 
 Con estos pasos deberiamos tener a nuestra disposición una API REST escuchando en http://localhost:8080/calculator/calculate
 
-Si has tenido algun error con la ejecución de las instrucciones anteriores, en el proyecto ya hay un JAR definitivo compilado con todas las dependencias,  puedes  
+Una vez realizados los comandos, el micro estará abierto en el puerto 8080 y escuchando peticiones REST GET.
 
-1. clonar el proyecto en local 
-2. ejecutar el JAR precompilado calculator-0.0.1-SNAPSHOT.jar
+Los parámetros se le deben pasar por URL en formato URLEncoded. Los parametros son los siguientes primero el primer numero (num1) de la operación, segundo el segundo numero de la operación (num2) y la operación (operator) a realizar. 
 
-
-Si has seguido correctamente los pasos anteriores, deberias tener el puerto 8080 abierto y escuchando peticiones REST GET.
-
-Los parámetros se le deben pasar por URL en formato URLEncoded. Los parametros son los siguientes primero el primer numero de la operación, segundo el segundo numero de la operación y operacion una cadena de texto describiendo la operación a realizar. 
 # Valores aceptados: 
 
 suma y resta. 
