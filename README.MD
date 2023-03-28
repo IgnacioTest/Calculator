@@ -4,7 +4,7 @@ Calculadora como micro-servicio (API) utilizando Spring-boot y Maven con funcion
 Comunicación a través de una API REST (p.e. GET /calculator/calculate?num1=4&num2=9&operator=SUMA)
 
 # Como utilizar:
-* Descargar el repositorio girhub
+* Descargar el repositorio github
 * Ejecutar una verificación de Maven
 * Instalación limpia de Maven
 
